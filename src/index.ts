@@ -11,6 +11,12 @@ const config = {
   port: 5000,
 };
 
+if (process.env.PORT) {
+  config.port=parseInt(process.env.PORT);
+}
+
+
+
 AppDataSource.initialize()
   .then(async () => {
     // create express app
